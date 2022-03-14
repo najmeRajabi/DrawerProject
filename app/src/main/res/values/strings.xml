@@ -2,4 +2,7 @@
     <string name="app_name">DrawerProject</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="menu_exit">exit</string>
+    <string name="menu_profile">profile</string>
+    <string name="menu_settings">settings</string>
 </resources>
