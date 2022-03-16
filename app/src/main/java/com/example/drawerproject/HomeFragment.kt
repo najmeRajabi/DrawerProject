@@ -5,10 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.example.drawerproject.databinding.FragmentHomeBinding
 
 
 class HomeFragment : Fragment() {
+    val infoViewModel:InfoViewModel by viewModels()
 
     lateinit var binding: FragmentHomeBinding
 
@@ -22,6 +24,15 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
+
+        val arrayBox= arrayListOf(binding.includeImg1,
+        binding.includeImg2, binding.includeImg3,
+        binding.includeImg4, binding.includeImg5,
+            binding.includeImg6)
+
+        val itemList = infoViewModel.arrayInfo
+
+
         return binding.root
     }
 
