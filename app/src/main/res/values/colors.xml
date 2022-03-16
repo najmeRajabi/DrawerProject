@@ -10,4 +10,10 @@
     <color name="pink">#ED23E2</color>
     <color name="blue">#2179BF</color>
     <color name="gray">#666666</color>
+
+    <color name="pink_1">#e7dada</color>
+    <color name="pink_2">#e7b7cc</color>
+    <color name="pink_3">#dc799c</color>
+    <color name="pink_4">#eba2ab</color>
+    <color name="pink_5">#efbaba</color>
 </resources>
