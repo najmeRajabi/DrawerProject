@@ -7,9 +7,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.example.drawerproject.databinding.FragmentDetailBinding
 
 class DetailFragment : Fragment() {
@@ -34,6 +37,9 @@ class DetailFragment : Fragment() {
         binding.txvExplainDetail.text = infoViewModel.arrayInfo[index].explain
 
 
+        glide(binding.imvDetail,infoViewModel.arrayInfo[index].image)
+
+
 
         return binding .root
     }
@@ -50,5 +56,22 @@ class DetailFragment : Fragment() {
 //        val intent = Intent(activity, Intent.ACTION_SEND)
 //        startActivity(intent)
 //    }
+
+    fun glide(imageview: ImageView, media:String){
+//        val media = "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg"
+        if (media !== null) {
+            Glide.with(this)
+                .load(media)
+//                .transform(CircleCrop())
+                .placeholder(R.drawable.ic_baseline_more_horiz_24) //5
+                .error(R.drawable.ic_baseline_image_not_supported_24) //6
+                .into(imageview)
+//                .fallback(R.drawable.ic_no_image) //7
+//                .transform(CircleCrop())
+//                .centerCrop()
+
+
+        }
+    }
 
 }
