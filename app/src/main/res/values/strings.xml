@@ -10,4 +10,13 @@
     <string name="nationalCode">nationalCode</string>
     <string name="phoneNumber">phoneNumber</string>
     <string name="explain">sasadfghfgftfdsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</string>
+    <string name="item_number">Item Number</string>
+    <string name="addInfo">add Information</string>
+    <string name="fullname">fullName</string>
+    <string name="save">save</string>
+    <string name="showInfo">yourInformation</string>
+    <string name="pink">pink</string>
+    <string name="blue">blue</string>
+    <string name="dark">dark</string>
+    <string name="choose_theme">choose Theme</string>
 </resources>
