@@ -44,7 +44,7 @@ class HomeFragment : Fragment() {
 
         val itemList = infoViewModel.arrayInfo
 
-        for (i in 0..5){
+        for (i in 0 until NUMBER){
             arrayBox[i].imvHome.setOnClickListener {
                 val bundle = bundleOf("index" to i)
                 findNavController().navigate(R.id.action_homeFragment_to_detailFragment , bundle)
