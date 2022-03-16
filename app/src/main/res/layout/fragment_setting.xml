@@ -18,6 +18,7 @@
             android:layout_margin="10dp"
             android:padding="10dp"/>
         <TextView
+            android:id="@+id/txv_seekbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:text="4"
@@ -48,6 +49,7 @@
             android:text="@string/choose_theme"
             android:layout_margin="10dp"/>
         <RadioGroup
+            android:id="@+id/radioGroup_theme"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -88,6 +90,7 @@
             android:layout_marginHorizontal="10dp"/>
 
         <LinearLayout
+            android:id="@+id/ll_edt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:visibility="visible"
@@ -114,9 +117,21 @@
                 android:hint="@string/phoneNumber"
                 android:inputType="phone"
                 style="@style/edt_style" />
+            <EditText
+                android:id="@+id/edt_photo"
+                android:hint="@string/photo"
+                style="@style/edt_style" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="10dp"
+                android:text="@string/register"/>
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/ll_txv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:visibility="gone"
@@ -144,15 +159,16 @@
                 android:hint="@string/phoneNumber"
                 android:gravity="center"
                 style="@style/edt_style" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_change_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="10dp"
+                android:text="@string/change_info"/>
         </LinearLayout>
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_save"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginVertical="10dp"
-            android:text="@string/save"/>
+
 
 
     </LinearLayout>
