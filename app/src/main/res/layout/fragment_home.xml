@@ -1,14 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
 
-</FrameLayout>
+
+
+
+    <include
+        android:id="@+id/include_Img1"
+        layout="@layout/image_layout"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:minHeight="150dp"
+        android:layout_margin="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/include_Img3"
+        app:layout_constraintEnd_toStartOf="@+id/include_Img2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/include_Img2"
+        layout="@layout/image_layout"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:minHeight="150dp"
+        android:layout_margin="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/include_Img4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/include_Img1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/include_Img3"
+        layout="@layout/image_layout"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:minHeight="150dp"
+        android:layout_margin="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/include_Img5"
+        app:layout_constraintEnd_toStartOf="@+id/include_Img4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include_Img1" />
+
+    <include
+        android:id="@+id/include_Img4"
+        layout="@layout/image_layout"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:minHeight="150dp"
+        android:layout_margin="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/include_Img6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/include_Img3"
+        app:layout_constraintTop_toBottomOf="@+id/include_Img2" />
+
+    <include
+        android:id="@+id/include_Img5"
+        layout="@layout/image_layout"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:minHeight="150dp"
+        android:layout_margin="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/include_Img6"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include_Img3" />
+
+    <include
+        android:id="@+id/include_Img6"
+        layout="@layout/image_layout"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:minHeight="150dp"
+        android:layout_margin="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/include_Img5"
+        app:layout_constraintTop_toBottomOf="@+id/include_Img4" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
