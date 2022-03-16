@@ -24,7 +24,7 @@
         android:layout_height="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="@id/imv_detail"
-        android:src="@drawable/account_circle"
+        android:src="@drawable/share"
         android:padding="10dp"
         android:layout_margin="20dp"/>
 
