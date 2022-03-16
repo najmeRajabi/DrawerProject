@@ -35,6 +35,8 @@ class MainActivity : AppCompatActivity() {
         toolbar.setupWithNavController(navController,appBarConfiguration)
         navView.setupWithNavController(navController)
         setSupportActionBar(toolbar)
+        
+//        navView.getHeaderView(R.id.txv_nameD)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
