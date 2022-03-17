@@ -47,18 +47,29 @@ class DetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val index = requireArguments().getInt("index")
+
         binding.imvIcon.setOnClickListener {
             Toast.makeText(activity,"share" , Toast.LENGTH_SHORT).show()
+            share(infoViewModel.arrayInfo[index].name)
         }
     }
 
-//    private fun share() {
-//        val intent = Intent(activity, Intent.ACTION_SEND)
-//        startActivity(intent)
-//    }
+    private fun share(message: String) {
+
+        val intent = Intent().apply {
+            action = Intent.ACTION_SEND
+            putExtra(Intent.EXTRA_TEXT, message)
+            type = "text/plain"
+        }
+
+        val shareIntent = Intent.createChooser(intent, null)
+        startActivity(shareIntent)
+
+    }
 
     fun glide(imageview: ImageView, media:String){
-//        val media = "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg"
+
         if (media !== null) {
             Glide.with(this)
                 .load(media)
