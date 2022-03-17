@@ -7,6 +7,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.example.drawerproject.databinding.FragmentProfileBinding
 
 class ProfileFragment : Fragment() {
@@ -35,6 +38,19 @@ class ProfileFragment : Fragment() {
             binding.txvName.text=getString(NAME ,"")
             binding.txvNationalCode.text= getString(NATIONAL ,"")
             binding.txvPhoneNumber.text=getString(PHONE ,"")
+
+            val media= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkspTGDaYI0SloxfqGWTJMZYniyE8q9oqahw&usqp=CAU"
+            glide(binding.imvProfile,media)
+        }
+    }
+    fun glide(imageview: ImageView, media:String){
+        if (media !== null) {
+            Glide.with(this)
+                .load(media)
+                .transform(CircleCrop())
+                .placeholder(R.drawable.ic_baseline_more_horiz_24) //5
+                .error(R.drawable.ic_baseline_image_not_supported_24) //6
+                .into(imageview)
         }
     }
 

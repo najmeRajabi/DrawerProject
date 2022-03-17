@@ -53,32 +53,35 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <RadioButton
                 android:id="@+id/radioBtn_pink"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/pink"
+                android:layout_marginStart="20dp"
                 android:layout_weight="1"
-                android:textColor="@color/pink"
                 android:shadowColor="@color/pink"
-                android:layout_marginStart="20dp"/>
+                android:text="@string/pink"
+                android:textColor="@color/pink" />
+
             <RadioButton
                 android:id="@+id/radioBtn_blue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/blue"
-                android:checked="true"
-                android:textColor="@color/blue"
+                android:layout_marginStart="20dp"
                 android:layout_weight="1"
-                android:layout_marginStart="20dp"/>
+                android:checked="true"
+                android:text="@string/blue"
+                android:textColor="@color/blue" />
+
             <RadioButton
                 android:id="@+id/radioBtn_dark"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/dark"
-                android:textColor="@color/gray"
+                android:layout_marginStart="20dp"
                 android:layout_weight="1"
-                android:layout_marginStart="20dp"/>
+                android:text="@string/dark"
+                android:textColor="@color/gray" />
 
 
         </RadioGroup>

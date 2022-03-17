@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.SeekBar
+import androidx.appcompat.app.AppCompatDelegate
 import com.example.drawerproject.databinding.FragmentSettingBinding
 
 var NUMBER= 4
@@ -42,12 +43,13 @@ class SettingFragment : Fragment() {
 //        binding.radioGroupTheme.setOnCheckedChangeListener{}
         checkRegistered()
 
+
         binding.radioGroupTheme.setOnCheckedChangeListener(
             RadioGroup.OnCheckedChangeListener { group, checkedId ->
                 val radio: RadioButton? = activity?.findViewById(checkedId)
                 changeTheme(binding.radioGroupTheme.checkedRadioButtonId)
-                activity?.changingConfigurations
-                activity?.recreate()
+
+
             })
 
         binding.btnRegister.setOnClickListener {
@@ -153,6 +155,22 @@ class SettingFragment : Fragment() {
             else -> result= true
         }
         return result
+    }
+
+    fun onRadioButtonClick(view: View){
+        if (view is RadioButton){
+            val checked = view.isChecked
+            when (view.getId()) {
+                R.id.radioBtn_dark ->
+                    if (checked) {
+                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                    }
+                R.id.radioBtn_blue ->
+                    if (checked){
+                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                    }
+            }
+        }
     }
 
 
