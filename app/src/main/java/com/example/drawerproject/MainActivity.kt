@@ -3,15 +3,14 @@ package com.example.drawerproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.widget.Toolbar
+import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.*
 import com.google.android.material.navigation.NavigationView
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupWithNavController
-
 
 
 class MainActivity : AppCompatActivity() {
@@ -28,15 +27,28 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController
-//        val navController = findNavController(R.id.nav_host_fragment)
         appBarConfiguration = AppBarConfiguration(
             setOf( R.id.homeFragment, R.id.profileFragment, R.id.settingFragment,R.id.nav_exit ),
             drawerLayout )
         toolbar.setupWithNavController(navController,appBarConfiguration)
         navView.setupWithNavController(navController)
         setSupportActionBar(toolbar)
+
+//        navView.menu.findItem(R.id.nav_exit).setOnMenuItemClickListener { finishAffinity()}
         
 //        navView.getHeaderView(R.id.txv_nameD)
+
+       navView.setNavigationItemSelectedListener {
+           when (it.itemId){
+               R.id.nav_exit -> {
+                   finish()
+                   true
+               }
+           }
+           NavigationUI.onNavDestinationSelected(it, navController)
+           drawerLayout.closeDrawer(GravityCompat.START)
+           true
+       }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -48,6 +60,9 @@ class MainActivity : AppCompatActivity() {
     }
 
 //    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+//        if (item == findViewById(R.id.nav_exit)){
+//            finishAffinity()
+//        }
 //        val navController = findNavController(R.id.nav_host_fragment)
 //        return item.onNavDestinationSelected(navController) || super.onOptionsItemSelected(item)
 //    }
@@ -55,3 +70,4 @@ class MainActivity : AppCompatActivity() {
 
 
 }
+
