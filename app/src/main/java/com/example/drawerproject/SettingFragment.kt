@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RadioButton
+import android.widget.RadioGroup
 import android.widget.SeekBar
 import com.example.drawerproject.databinding.FragmentSettingBinding
 
@@ -40,6 +42,14 @@ class SettingFragment : Fragment() {
 //        binding.radioGroupTheme.setOnCheckedChangeListener{}
         checkRegistered()
 
+        binding.radioGroupTheme.setOnCheckedChangeListener(
+            RadioGroup.OnCheckedChangeListener { group, checkedId ->
+                val radio: RadioButton? = activity?.findViewById(checkedId)
+                changeTheme(binding.radioGroupTheme.checkedRadioButtonId)
+                activity?.changingConfigurations
+                activity?.recreate()
+            })
+
         binding.btnRegister.setOnClickListener {
             if (check()){
                 saveInSheardPref()
@@ -69,6 +79,15 @@ class SettingFragment : Fragment() {
                 }
             }
         })
+    }
+
+    private fun changeTheme(id:Int): RadioGroup.OnCheckedChangeListener? {
+        when (id){
+            R.id.radioBtn_pink -> activity?.setTheme(R.style.Theme_Pink)
+            R.id.radioBtn_blue -> activity?.setTheme(R.style.Theme_DrawerProject)
+            R.id.radioBtn_dark -> activity?.setTheme(R.style.Theme_DrawerProject_dark)
+        }
+        return null
     }
 
     private fun checkRegistered() {

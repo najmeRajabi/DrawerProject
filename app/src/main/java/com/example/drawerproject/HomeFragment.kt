@@ -59,7 +59,6 @@ class HomeFragment : Fragment() {
 
     }
     fun glide(imageview:ImageView , media:String){
-//        val media = "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg"
         if (media !== null) {
             Glide.with(this)
                 .load(media)
@@ -67,11 +66,6 @@ class HomeFragment : Fragment() {
                 .placeholder(R.drawable.ic_baseline_more_horiz_24) //5
                 .error(R.drawable.ic_baseline_image_not_supported_24) //6
                 .into(imageview)
-//                .fallback(R.drawable.ic_no_image) //7
-//                .transform(CircleCrop())
-//                .centerCrop()
-
-
         }
     }
 
