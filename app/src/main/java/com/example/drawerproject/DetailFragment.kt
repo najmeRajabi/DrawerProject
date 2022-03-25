@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -17,7 +18,7 @@ import com.example.drawerproject.databinding.FragmentDetailBinding
 
 class DetailFragment : Fragment() {
 
-    val infoViewModel: InfoViewModel by viewModels()
+    val infoViewModel: InfoViewModel by activityViewModels()
     lateinit var binding : FragmentDetailBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,11 +34,11 @@ class DetailFragment : Fragment() {
 
         val index = requireArguments().getInt("index")
 
-        binding.txvNameDetail.text = infoViewModel.arrayInfo[index].name
-        binding.txvExplainDetail.text = infoViewModel.arrayInfo[index].explain
+        binding.txvNameDetail.text = infoViewModel.getName(index)
+        binding.txvExplainDetail.text = infoViewModel.getExplain(index)
 
 
-        glide(binding.imvDetail,infoViewModel.arrayInfo[index].image)
+        infoViewModel.getImageUrl(index)?.let { glide(binding.imvDetail, it) }
 
 
 
@@ -51,7 +52,7 @@ class DetailFragment : Fragment() {
 
         binding.imvIcon.setOnClickListener {
             Toast.makeText(activity,"share" , Toast.LENGTH_SHORT).show()
-            share(infoViewModel.arrayInfo[index].name)
+            share(infoViewModel.getName(index) + "\n" + infoViewModel.getExplain(index))
         }
     }
 

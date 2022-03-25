@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
@@ -15,7 +16,7 @@ import com.example.drawerproject.databinding.FragmentHomeBinding
 
 
 class HomeFragment : Fragment() {
-    val infoViewModel:InfoViewModel by viewModels()
+    val infoViewModel:InfoViewModel by activityViewModels()
 
     lateinit var binding: FragmentHomeBinding
 
@@ -45,15 +46,15 @@ class HomeFragment : Fragment() {
             binding.includeImg4, binding.includeImg5,
             binding.includeImg6)
 
-        val itemList = infoViewModel.arrayInfo
 
         for (i in 0 until NUMBER){
             arrayBox[i].imvHome.setOnClickListener {
                 val bundle = bundleOf("index" to i)
                 findNavController().navigate(R.id.action_homeFragment_to_detailFragment , bundle)
             }
-            arrayBox[i].textView.text = itemList[i].name
-            glide(arrayBox[i].imvHome,itemList[i].image)
+
+            arrayBox[i].textView.text = infoViewModel.getName(i)
+            infoViewModel.getImageUrl(i)?.let { glide(arrayBox[i].imvHome , it) }
 
         }
 
