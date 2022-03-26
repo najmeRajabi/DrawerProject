@@ -16,7 +16,7 @@ import com.example.drawerproject.databinding.FragmentHomeBinding
 
 
 class HomeFragment : Fragment() {
-    val infoViewModel:InfoViewModel by activityViewModels()
+    private val infoViewModel:InfoViewModel by activityViewModels()
 
     lateinit var binding: FragmentHomeBinding
 
