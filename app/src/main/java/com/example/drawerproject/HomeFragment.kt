@@ -1,9 +1,7 @@
 package com.example.drawerproject
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.ImageView
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
@@ -69,5 +67,6 @@ class HomeFragment : Fragment() {
                 .into(imageview)
         }
     }
+
 
 }

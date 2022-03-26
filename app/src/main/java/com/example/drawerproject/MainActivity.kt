@@ -3,6 +3,7 @@ package com.example.drawerproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuInflater
 import android.view.MenuItem
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
@@ -52,6 +53,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.home_menu, menu)
         return true
     }
     override fun onSupportNavigateUp(): Boolean {
@@ -59,13 +62,15 @@ class MainActivity : AppCompatActivity() {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
-//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//        if (item == findViewById(R.id.nav_exit)){
-//            finishAffinity()
-//        }
-//        val navController = findNavController(R.id.nav_host_fragment)
-//        return item.onNavDestinationSelected(navController) || super.onOptionsItemSelected(item)
-//    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item == findViewById(R.id.accountFragment)) {
+            findNavController(R.id.accountFragment).navigate(R.id.action_homeFragment_to_accountFragment)
+        }
+
+
+        val navController = findNavController(R.id.nav_host_fragment)
+        return item.onNavDestinationSelected(navController) || super.onOptionsItemSelected(item)
+    }
 
 
 
