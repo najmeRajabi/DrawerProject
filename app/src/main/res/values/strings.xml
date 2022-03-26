@@ -24,4 +24,5 @@
     <string name="account_num">2121212121</string>
     <string name="cartNumber">شماره کارت : </string>
     <string name="shebaNumber">شماره شبا: </string>
+    <string name="account_info">اطلاعات بانکی</string>
 </resources>
