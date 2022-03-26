@@ -20,4 +20,8 @@
     <string name="choose_theme">choose Theme</string>
     <string name="photo">photoUrl</string>
     <string name="change_info">change Info</string>
+    <string name="accountNumber">شماره حساب:</string>
+    <string name="account_num">2121212121</string>
+    <string name="cartNumber">شماره کارت : </string>
+    <string name="shebaNumber">شماره شبا: </string>
 </resources>
