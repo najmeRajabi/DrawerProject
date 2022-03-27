@@ -12,6 +12,7 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.SeekBar
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.navigation.fragment.findNavController
 import com.example.drawerproject.databinding.FragmentSettingBinding
 
 var NUMBER= 4
@@ -52,6 +53,9 @@ class SettingFragment : Fragment() {
 
 
             })
+        binding.btnChangeAccountInfo.setOnClickListener {
+            findNavController().navigate(R.id.action_settingFragment_to_editAccountFragment)
+        }
 
         binding.btnRegister.setOnClickListener {
             if (check()){

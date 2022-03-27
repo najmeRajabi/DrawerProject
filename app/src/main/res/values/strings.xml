@@ -26,4 +26,6 @@
     <string name="shebaNumber">شماره شبا: </string>
     <string name="account_info">اطلاعات بانکی</string>
     <string name="save">ذخیره</string>
+    <string name="enter_account_num">لطفا شماره منتخب را وارد کنید</string>
+    <string name="change_account_info"> تغییر اطلاعات حساب بانکی</string>
 </resources>
