@@ -46,8 +46,8 @@
             android:inputType="phone"
             style="@style/edt_style" />
         <EditText
-            android:id="@+id/edt_photo"
-            android:hint="@string/photo"
+            android:id="@+id/edt_email"
+            android:hint="@string/email"
             style="@style/edt_style" />
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_register"
