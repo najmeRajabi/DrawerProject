@@ -1,5 +1,7 @@
 package com.example.drawerproject
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -20,14 +22,14 @@ class EditAccountFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentEditAccountBinding.inflate(layoutInflater , container , false)
+        binding = FragmentEditAccountBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.btnSaveAccountInfo.setOnClickListener {
-            if (checkEditTexts()){
+            if (checkEditTexts()) {
                 saveAccountInfo()
                 activity?.onBackPressed()
             }
@@ -35,7 +37,20 @@ class EditAccountFragment : Fragment() {
     }
 
     private fun saveAccountInfo() {
-        Toast.makeText(activity,"saved",Toast.LENGTH_SHORT).show()
+        Toast.makeText(activity, "saved", Toast.LENGTH_SHORT).show()
+
+
+        val sharedPreferences: SharedPreferences =
+            requireActivity().getSharedPreferences("HW10", Context.MODE_PRIVATE)
+        sharedPreferences.edit().apply {
+            clear()
+            putString(ACCOUNTNUM, binding.edtAccountNum.text.toString())
+            putString(CARTNUM, binding.edtCartNum.text.toString())
+            putString(SHEBANUM, binding.edtShebaNum.text.toString())
+            apply()
+        }
+
+
     }
 
     private fun checkEditTexts(): Boolean {
@@ -57,5 +72,6 @@ class EditAccountFragment : Fragment() {
 
         return result
     }
+
 
 }

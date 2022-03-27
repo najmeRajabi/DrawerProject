@@ -20,6 +20,9 @@ var NAME = "name"
 var NATIONAL = "nationalCode"
 var PHONE = "phone"
 var IMAGE = "image"
+const val ACCOUNTNUM = "AccountNum"
+const val CARTNUM = "CartNum"
+const val SHEBANUM = "ShebaNum"
 
 class SettingFragment : Fragment() {
 
