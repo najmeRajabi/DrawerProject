@@ -31,6 +31,7 @@
 
         <EditText
             android:id="@+id/edt_accountNum"
+            android:inputType="numberDecimal"
             style="@style/txv_accountNumber_style.numbers"
             android:hint="@string/account_num"
             app:layout_constraintEnd_toEndOf="parent"
@@ -45,6 +46,7 @@
 
         <EditText
             android:id="@+id/edt_cartNum"
+            android:inputType="numberDecimal"
             style="@style/txv_accountNumber_style.numbers"
             android:hint="@string/account_num"
             app:layout_constraintEnd_toEndOf="parent"
@@ -60,12 +62,14 @@
 
         <EditText
             android:id="@+id/edt_shebaNum"
+            android:inputType="numberDecimal"
             style="@style/txv_accountNumber_style.numbers"
             android:hint="@string/account_num"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/txv_shebaNum_text" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_save_account_info"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_constraintStart_toStartOf="parent"

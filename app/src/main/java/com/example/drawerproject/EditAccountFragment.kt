@@ -5,9 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import com.example.drawerproject.databinding.FragmentEditAccountBinding
 
 class EditAccountFragment : Fragment() {
 
+    lateinit var binding: FragmentEditAccountBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,8 +20,42 @@ class EditAccountFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_edit_account, container, false)
+        binding = FragmentEditAccountBinding.inflate(layoutInflater , container , false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.btnSaveAccountInfo.setOnClickListener {
+            if (checkEditTexts()){
+                saveAccountInfo()
+                activity?.onBackPressed()
+            }
+        }
+    }
+
+    private fun saveAccountInfo() {
+        Toast.makeText(activity,"saved",Toast.LENGTH_SHORT).show()
+    }
+
+    private fun checkEditTexts(): Boolean {
+        var result = false
+        when {
+            binding.edtAccountNum.text.isNullOrBlank() -> {
+                binding.edtAccountNum.error = getString(R.string.enter_account_num)
+            }
+            binding.edtCartNum.text.isNullOrBlank() -> {
+                binding.edtCartNum.error = getString(R.string.enter_account_num)
+            }
+            binding.edtShebaNum.text.isNullOrBlank() -> {
+                binding.edtShebaNum.error = getString(R.string.enter_account_num)
+            }
+            else -> {
+                result = true
+            }
+        }
+
+        return result
     }
 
 }
