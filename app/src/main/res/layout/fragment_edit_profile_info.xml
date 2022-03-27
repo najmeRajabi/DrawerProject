@@ -1,14 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".EditProfileInfoFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+    <LinearLayout
+        android:id="@+id/ll_edt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:orientation="vertical">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imv_profile"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/circle_bg"
+            android:src="@drawable/account_circle"
+            android:layout_gravity="center"/>
+
+
+<!--        <TextView-->
+<!--            android:id="@+id/txv_addInfo"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/addInfo"-->
+<!--            android:padding="10dp"-->
+<!--            android:layout_margin="10dp"/>-->
+        <EditText
+            android:id="@+id/edt_name"
+            android:hint="@string/fullname"
+            style="@style/edt_style" />
+        <EditText
+            android:id="@+id/edt_nationalCode"
+            android:hint="@string/nationalCode"
+            android:inputType="numberDecimal"
+            style="@style/edt_style" />
+        <EditText
+            android:id="@+id/edt_phone"
+            android:hint="@string/phoneNumber"
+            android:inputType="phone"
+            style="@style/edt_style" />
+        <EditText
+            android:id="@+id/edt_photo"
+            android:hint="@string/photo"
+            style="@style/edt_style" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="10dp"
+            android:text="@string/register"/>
+
+        <Switch
+            android:id="@+id/switch_show_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="@string/show_info"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    </LinearLayout>
+
+</ScrollView>

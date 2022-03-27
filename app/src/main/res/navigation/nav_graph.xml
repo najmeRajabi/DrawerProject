@@ -30,6 +30,9 @@
         <action
             android:id="@+id/action_settingFragment_to_editAccountFragment"
             app:destination="@id/editAccountFragment" />
+        <action
+            android:id="@+id/action_settingFragment_to_editProfileInfoFragment"
+            app:destination="@id/editProfileInfoFragment" />
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
@@ -46,4 +49,9 @@
         android:name="com.example.drawerproject.EditAccountFragment"
         android:label="fragment_edit_account"
         tools:layout="@layout/fragment_edit_account" />
+    <fragment
+        android:id="@+id/editProfileInfoFragment"
+        android:name="com.example.drawerproject.EditProfileInfoFragment"
+        android:label="fragment_edit_profile_info"
+        tools:layout="@layout/fragment_edit_profile_info" />
 </navigation>

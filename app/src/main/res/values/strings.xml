@@ -28,4 +28,5 @@
     <string name="save">ذخیره</string>
     <string name="enter_account_num">لطفا شماره منتخب را وارد کنید</string>
     <string name="change_account_info"> تغییر اطلاعات حساب بانکی</string>
+    <string name="show_info">نمایش اطلاعات</string>
 </resources>
