@@ -5,8 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class InfoViewModel:ViewModel() {
-//    private val info = Data()
-//    val arrayInfo = info.dataArray
+
 
     private val _dataList = MutableLiveData<ArrayList<Data>>()
     val dataList: LiveData<ArrayList<Data>> = _dataList

@@ -30,6 +30,7 @@ class HomeFragment : Fragment() {
         binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
 
 
+        setHasOptionsMenu(true)
 
 
         return binding.root
@@ -66,6 +67,14 @@ class HomeFragment : Fragment() {
                 .error(R.drawable.ic_baseline_image_not_supported_24) //6
                 .into(imageview)
         }
+    }
+
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.home_menu,menu)
+        super.onCreateOptionsMenu(menu, inflater)
+        val item = menu.findItem(R.id.accountFragment)
+        item.isVisible = true
     }
 
 

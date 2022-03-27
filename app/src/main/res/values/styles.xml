@@ -25,7 +25,7 @@
     <style name="txv_accountNumber_style">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">18sp</item>
+        <item name="android:textSize">14sp</item>
         <item name="android:layout_margin">20dp</item>
     </style>
     <style name="txv_accountNumber_style.numbers">
