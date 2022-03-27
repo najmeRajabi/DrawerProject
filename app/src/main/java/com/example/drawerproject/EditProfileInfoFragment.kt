@@ -59,7 +59,7 @@ class EditProfileInfoFragment : Fragment() {
 
     private fun saveInSharedPref() {
         val sharedPreferences: SharedPreferences =
-            requireActivity().getSharedPreferences("HW10" , Context.MODE_PRIVATE)
+            requireActivity().getSharedPreferences("HW10Profile" , Context.MODE_PRIVATE)
         sharedPreferences.edit().apply {
             clear()
             putString(NAME ,binding.edtName.text.toString())

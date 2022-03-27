@@ -33,7 +33,7 @@ class ProfileFragment : Fragment() {
 
     private fun initViews() {
         val sharedPreferences: SharedPreferences =
-            requireActivity().getSharedPreferences("HW10" , Context.MODE_PRIVATE)
+            requireActivity().getSharedPreferences("HW10Profile" , Context.MODE_PRIVATE)
         sharedPreferences.apply {
             binding.txvName.text=getString(NAME ,"")
             binding.txvNationalCode.text= getString(NATIONAL ,"")
