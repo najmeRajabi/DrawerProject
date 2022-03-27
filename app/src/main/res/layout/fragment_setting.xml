@@ -105,84 +105,17 @@
             android:alpha="0.2"
             android:layout_marginHorizontal="10dp"/>
 
-        <LinearLayout
-            android:id="@+id/ll_edt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="visible"
-            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/txv_addInfo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/addInfo"
-                android:padding="10dp"
-                android:layout_margin="10dp"/>
-            <EditText
-                android:id="@+id/edt_name"
-                android:hint="@string/fullname"
-                style="@style/edt_style" />
-            <EditText
-                android:id="@+id/edt_nationalCode"
-                android:hint="@string/nationalCode"
-                android:inputType="numberDecimal"
-                style="@style/edt_style" />
-            <EditText
-                android:id="@+id/edt_phone"
-                android:hint="@string/phoneNumber"
-                android:inputType="phone"
-                style="@style/edt_style" />
-            <EditText
-                android:id="@+id/edt_photo"
-                android:hint="@string/photo"
-                style="@style/edt_style" />
+
+
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_register"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginVertical="10dp"
-                android:text="@string/register"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_txv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="gone"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/txv_showInfo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/showInfo"
-                android:padding="10dp"
-                android:layout_margin="10dp"/>
-            <TextView
-                android:id="@+id/txv_nameS"
-                android:hint="@string/fullname"
-                android:gravity="center"
-                style="@style/edt_style" />
-            <TextView
-                android:id="@+id/txv_nationalCodeS"
-                android:hint="@string/nationalCode"
-                android:gravity="center"
-                style="@style/edt_style" />
-            <TextView
-                android:id="@+id/txv_phoneS"
-                android:hint="@string/phoneNumber"
-                android:gravity="center"
-                style="@style/edt_style" />
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_change_info"
+                android:id="@+id/btn_change_profile_info"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginVertical="10dp"
                 android:text="@string/change_info"/>
-        </LinearLayout>
+
 
 
 

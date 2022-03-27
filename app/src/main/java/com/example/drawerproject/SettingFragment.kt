@@ -57,15 +57,8 @@ class SettingFragment : Fragment() {
             findNavController().navigate(R.id.action_settingFragment_to_editAccountFragment)
         }
 
-        binding.btnRegister.setOnClickListener {
-            if (check()){
-                saveInSheardPref()
-                changeVisibilityRegister()
-                showInTxv()
-            }
-        }
-        binding.btnChangeInfo.setOnClickListener {
-            changeVisibility()
+        binding.btnChangeProfileInfo.setOnClickListener {
+            findNavController().navigate(R.id.action_settingFragment_to_editProfileInfoFragment)
         }
 
         binding.txvSeekbar.text= NUMBER.toString()
@@ -101,66 +94,13 @@ class SettingFragment : Fragment() {
         val sharedPreferences:SharedPreferences =
             requireActivity().getSharedPreferences("HW10" , Context.MODE_PRIVATE)
         if (!sharedPreferences.getString(NAME,"").isNullOrBlank()){
-            changeVisibilityRegister()
-            showInTxv()
+
         }
     }
 
-    private fun changeVisibility() {
-        binding.llEdt.visibility= View.VISIBLE
-        binding.llTxv.visibility= View.GONE
-    }
 
 
-    private fun showInTxv() {
 
-        val sharedPreferences:SharedPreferences =
-            requireActivity().getSharedPreferences("HW10" , Context.MODE_PRIVATE)
-        sharedPreferences.apply {
-            binding.txvNameS.text=getString(NAME ,"")
-            binding.txvNationalCodeS.text= getString(NATIONAL ,"")
-            binding.txvPhoneS.text=getString(PHONE ,"")
-        }
-
-    }
-
-    private fun changeVisibilityRegister() {
-        binding.llEdt.visibility= View.GONE
-        binding.llTxv.visibility= View.VISIBLE
-    }
-
-    private fun saveInSheardPref() {
-        val sharedPreferences:SharedPreferences =
-            requireActivity().getSharedPreferences("HW10" , Context.MODE_PRIVATE)
-        sharedPreferences.edit().apply {
-            clear()
-            putString(NAME ,binding.edtName.text.toString())
-            putString(NATIONAL ,binding.edtNationalCode.text.toString())
-            putString(PHONE ,binding.edtPhone.text.toString())
-            putString(IMAGE ,binding.edtPhoto.text.toString())
-            apply()
-        }
-    }
-
-    private fun check(): Boolean {
-        var  result = false
-        when {
-            binding.edtName.text.isNullOrBlank() -> {
-                binding.edtName.error = "empty!"
-            }
-            binding.edtNationalCode.text.isNullOrBlank() -> {
-                binding.edtNationalCode.error = "empty!"
-            }
-            binding.edtPhone.text.isNullOrBlank() -> {
-                binding.edtPhone.error = "empty!"
-            }
-            binding.edtPhoto.text.isNullOrBlank() -> {
-                binding.edtPhoto.error = "empty!"
-            }
-            else -> result= true
-        }
-        return result
-    }
 
     fun onRadioButtonClick(view: View){
         if (view is RadioButton){
@@ -178,10 +118,7 @@ class SettingFragment : Fragment() {
         }
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return super.onOptionsItemSelected(item)
-        item.itemId == R.id.accountFragment
-    }
+
 
 
 }
