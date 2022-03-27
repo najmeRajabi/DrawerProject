@@ -1,14 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".EditAccountFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content">
 
-</FrameLayout>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imv_account"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/ic_baseline_monetization_on_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txv_accountNum_text"
+            style="@style/txv_accountNumber_style"
+            android:text="@string/accountNumber"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imv_account" />
+
+        <EditText
+            android:id="@+id/edt_accountNum"
+            style="@style/txv_accountNumber_style.numbers"
+            android:hint="@string/account_num"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txv_accountNum_text" />
+
+        <TextView
+            android:id="@+id/txv_cartNum_text"
+            style="@style/txv_accountNumber_style"
+            android:text="@string/cartNumber"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_accountNum" />
+
+        <EditText
+            android:id="@+id/edt_cartNum"
+            style="@style/txv_accountNumber_style.numbers"
+            android:hint="@string/account_num"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txv_cartNum_text" />
+
+
+        <TextView
+            android:id="@+id/txv_shebaNum_text"
+            style="@style/txv_accountNumber_style"
+            android:text="@string/shebaNumber"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_cartNum" />
+
+        <EditText
+            android:id="@+id/edt_shebaNum"
+            style="@style/txv_accountNumber_style.numbers"
+            android:hint="@string/account_num"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txv_shebaNum_text" />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_shebaNum"
+            android:layout_margin="20dp"
+            android:text="@string/save"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>
+

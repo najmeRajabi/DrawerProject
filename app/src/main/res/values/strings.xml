@@ -25,4 +25,5 @@
     <string name="cartNumber">شماره کارت : </string>
     <string name="shebaNumber">شماره شبا: </string>
     <string name="account_info">اطلاعات بانکی</string>
+    <string name="save">ذخیره</string>
 </resources>

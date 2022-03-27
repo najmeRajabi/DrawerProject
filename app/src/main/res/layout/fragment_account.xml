@@ -19,7 +19,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/account_circle"/>
+        android:src="@drawable/ic_baseline_monetization_on_24"/>
 
     <TextView
         android:id="@+id/txv_accountNum_text"
@@ -29,7 +29,7 @@
         style="@style/txv_accountNumber_style" />
 
     <TextView
-        android:id="@+id/txv_accountNum"
+        android:id="@+id/edt_accountNum"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txv_accountNum_text"
         android:text="@string/account_num"
@@ -38,12 +38,12 @@
     <TextView
         android:id="@+id/txv_cartNum_text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txv_accountNum"
+        app:layout_constraintTop_toBottomOf="@id/edt_accountNum"
         android:text="@string/cartNumber"
         style="@style/txv_accountNumber_style" />
 
     <TextView
-        android:id="@+id/txv_cartNum"
+        android:id="@+id/edt_cartNum"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txv_cartNum_text"
         android:text="@string/account_num"
@@ -53,7 +53,7 @@
     <TextView
         android:id="@+id/txv_shebaNum_text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txv_cartNum"
+        app:layout_constraintTop_toBottomOf="@id/edt_cartNum"
         android:text="@string/shebaNumber"
         style="@style/txv_accountNumber_style" />
 
