@@ -1,5 +1,7 @@
 package com.example.drawerproject
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -22,7 +24,18 @@ class AccountFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentAccountBinding.inflate(layoutInflater, container, false)
+        initViews()
         return binding.root
+    }
+
+    fun initViews(){
+        val sharedPreferences: SharedPreferences =
+            requireActivity().getSharedPreferences("HW10" , Context.MODE_PRIVATE)
+        sharedPreferences.apply {
+            binding.txvAccountNum.text=getString(ACCOUNTNUM ,"")
+            binding.txvCartNum.text= getString(CARTNUM ,"")
+            binding.txvShebaNum.text=getString(SHEBANUM ,"")
+        }
     }
 
 }
