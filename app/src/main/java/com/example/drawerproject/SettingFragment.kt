@@ -16,10 +16,11 @@ import androidx.navigation.fragment.findNavController
 import com.example.drawerproject.databinding.FragmentSettingBinding
 
 var NUMBER= 4
-var NAME = "name"
-var NATIONAL = "nationalCode"
-var PHONE = "phone"
-var IMAGE = "image"
+var SHOWINFO = true
+const val NAME = "name"
+const val NATIONAL = "nationalCode"
+const val PHONE = "phone"
+const val IMAGE = "image"
 const val ACCOUNTNUM = "AccountNum"
 const val CARTNUM = "CartNum"
 const val SHEBANUM = "ShebaNum"

@@ -29,6 +29,13 @@ class EditProfileInfoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
+       binding.switchShowInfo.setOnCheckedChangeListener { _, b ->
+           SHOWINFO = b
+           Toast.makeText(activity, SHOWINFO.toString(),Toast.LENGTH_SHORT).show()
+           saveInSharedPreferences()
+       }
+
         binding.btnRegister.setOnClickListener {
             if (check()){
                 saveInSharedPref()
@@ -66,6 +73,15 @@ class EditProfileInfoFragment : Fragment() {
             putString(NATIONAL ,binding.edtNationalCode.text.toString())
             putString(PHONE ,binding.edtPhone.text.toString())
             putString(IMAGE ,binding.edtEmail.text.toString())
+            apply()
+        }
+    }
+    private fun saveInSharedPreferences() {
+        val sharedPreferences: SharedPreferences =
+            requireActivity().getSharedPreferences("HW10ShowProfile" , Context.MODE_PRIVATE)
+        sharedPreferences.edit().apply {
+            clear()
+            putBoolean("showInfo",SHOWINFO )
             apply()
         }
     }
