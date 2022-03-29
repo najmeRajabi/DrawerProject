@@ -23,14 +23,15 @@
             android:src="@drawable/account_circle"
             android:layout_gravity="center"/>
 
+        <Switch
+            android:id="@+id/switch_show_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="@string/show_info"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
 
-<!--        <TextView-->
-<!--            android:id="@+id/txv_addInfo"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="@string/addInfo"-->
-<!--            android:padding="10dp"-->
-<!--            android:layout_margin="10dp"/>-->
+
         <EditText
             android:id="@+id/edt_name"
             android:hint="@string/fullname"
@@ -57,13 +58,7 @@
             android:layout_marginVertical="10dp"
             android:text="@string/register"/>
 
-        <Switch
-            android:id="@+id/switch_show_info"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:text="@string/show_info"
-            tools:ignore="UseSwitchCompatOrMaterialXml" />
+
 
     </LinearLayout>
 
