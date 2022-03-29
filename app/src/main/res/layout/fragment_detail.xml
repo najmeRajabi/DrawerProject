@@ -15,6 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/gray"
         app:layout_constraintTop_toTopOf="parent"
         tools:src="@drawable/home" />
 
@@ -25,6 +26,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="@id/imv_detail"
         android:src="@drawable/share"
+        android:background="#33ffffff"
         android:padding="10dp"
         android:layout_margin="20dp"/>
 
