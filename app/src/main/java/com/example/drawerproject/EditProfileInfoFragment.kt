@@ -23,6 +23,7 @@ class EditProfileInfoFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentEditProfileInfoBinding.inflate(layoutInflater, container, false)
+        binding.switchShowInfo.isChecked = SHOWINFO
         return binding.root
     }
 

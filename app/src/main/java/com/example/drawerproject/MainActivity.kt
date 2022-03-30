@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
@@ -63,9 +64,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item == findViewById(R.id.accountFragment)) {
-            findNavController(R.id.accountFragment).navigate(R.id.action_homeFragment_to_accountFragment)
-        }
 
 
         val navController = findNavController(R.id.nav_host_fragment)

@@ -3,10 +3,10 @@ package com.example.drawerproject
 import android.os.Bundle
 import android.view.*
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CircleCrop
@@ -14,7 +14,7 @@ import com.example.drawerproject.databinding.FragmentHomeBinding
 
 
 class HomeFragment : Fragment() {
-    private val infoViewModel:InfoViewModel by activityViewModels()
+    private val infoViewModel: InfoViewModel by activityViewModels()
 
     lateinit var binding: FragmentHomeBinding
 
@@ -40,25 +40,28 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val arrayBox= arrayListOf(binding.includeImg1,
+        val arrayBox = arrayListOf(
+            binding.includeImg1,
             binding.includeImg2, binding.includeImg3,
             binding.includeImg4, binding.includeImg5,
-            binding.includeImg6)
+            binding.includeImg6
+        )
 
 
-        for (i in 0 until NUMBER){
+        for (i in 0 until NUMBER) {
             arrayBox[i].imvHome.setOnClickListener {
                 val bundle = bundleOf("index" to i)
-                findNavController().navigate(R.id.action_homeFragment_to_detailFragment , bundle)
+                findNavController().navigate(R.id.action_homeFragment_to_detailFragment, bundle)
             }
 
             arrayBox[i].textView.text = infoViewModel.getName(i)
-            infoViewModel.getImageUrl(i)?.let { glide(arrayBox[i].imvHome , it) }
+            infoViewModel.getImageUrl(i)?.let { glide(arrayBox[i].imvHome, it) }
 
         }
 
     }
-    fun glide(imageview:ImageView , media:String){
+
+    fun glide(imageview: ImageView, media: String) {
         if (media !== null) {
             Glide.with(this)
                 .load(media)
@@ -71,11 +74,31 @@ class HomeFragment : Fragment() {
 
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.home_menu,menu)
+        inflater.inflate(R.menu.home_menu, menu)
         super.onCreateOptionsMenu(menu, inflater)
-        val item = menu.findItem(R.id.accountFragment)
+        val item = menu.findItem(R.id.accountFragmentA)
         item.isVisible = true
     }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.accountFragmentA -> {
+                checkUserAllowed()
+                true}
+            else -> super.onOptionsItemSelected(item)
+        }
+
+    }
+
+    fun checkUserAllowed(){
+        if (SHOWINFO) {
+            findNavController().navigate(R.id.action_homeFragment_to_accountFragment)
+        } else {
+            Toast.makeText(activity, getString(R.string.dont_allowed), Toast.LENGTH_SHORT)
+                .show()
+        }
+    }
+
 
 
 }

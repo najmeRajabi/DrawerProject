@@ -30,4 +30,5 @@
     <string name="change_account_info"> تغییر اطلاعات حساب بانکی</string>
     <string name="show_info">نمایش اطلاعات</string>
     <string name="email">پست الکترونیک</string>
+    <string name="dont_allowed">\" دسترسی به اطلاعات مجاز نیست \"</string>
 </resources>
