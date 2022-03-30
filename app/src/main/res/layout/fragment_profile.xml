@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/purple_200"
+    android:orientation="vertical"
     tools:context=".ProfileFragment">
 
     <LinearLayout
@@ -12,28 +12,53 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/imv_profile"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/circle_bg"
-        android:src="@drawable/account_circle"
-        android:layout_gravity="center"/>
-    <TextView
-        android:id="@+id/txv_name"
-        android:text="@string/name"
-        style="@style/txv_profile_style" />
+        <LinearLayout
+            android:id="@+id/ll_info_account"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/txv_nationalCode"
-            android:text="@string/nationalCode"
-            style="@style/txv_profile_style" />
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imv_profile"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/circle_bg"
+                android:src="@drawable/account_circle" />
 
-        <TextView
-            android:id="@+id/txv_phoneNumber"
-            android:text="@string/phoneNumber"
-            style="@style/txv_profile_style" />
+            <TextView
+                android:id="@+id/txv_name"
+                style="@style/txv_profile_style"
+                android:text="@string/name" />
+
+            <TextView
+                android:id="@+id/txv_nationalCode"
+                style="@style/txv_profile_style"
+                android:text="@string/nationalCode" />
+
+            <TextView
+                android:id="@+id/txv_phoneNumber"
+                style="@style/txv_profile_style"
+                android:text="@string/phoneNumber" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_not_allowed_imv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="fill_vertical"
+                android:minHeight="250dp"
+                android:layout_marginTop="100dp"
+                android:src="@drawable/ic_baseline_not_interested_24" />
+        </LinearLayout>
 
 
     </LinearLayout>
