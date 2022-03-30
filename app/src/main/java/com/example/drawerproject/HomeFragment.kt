@@ -30,6 +30,7 @@ class HomeFragment : Fragment() {
         binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
 
 
+        binding.txvGoodTalk.text = infoViewModel.talk()
         setHasOptionsMenu(true)
 
 
