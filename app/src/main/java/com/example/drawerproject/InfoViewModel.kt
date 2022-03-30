@@ -3,12 +3,15 @@ package com.example.drawerproject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import kotlin.random.Random
 
 class InfoViewModel:ViewModel() {
 
 
     private val _dataList = MutableLiveData<ArrayList<Data>>()
     val dataList: LiveData<ArrayList<Data>> = _dataList
+
+    private val goodTalks = MutableLiveData(Storage.goodTalk)
 
     private val dataArray= arrayListOf(
         Data("مسجد نصیرالملک","مسجد نصیرالملک، شیراز این جعبه جواهر، مسجدی است که هر صبح بازی نور و رنگ را به نمایش می گذارد. قدمت این شاهکاری معماری به قرن نوزدهم بازمی گردد و علاوه بر شیشه های رنگی با کاشیکاری خیره کننده خود مشهور است. درواقع به دلیل کاشی های رنگ رز که در فضای داخلی مسجد به چشم می خورند، به آن لقب مسجد صورتی نیز داده اند","https://persianv.com/gardeshgari/wp-content/uploads/sites/31/2017/04/%D8%A8%D8%B1%D8%AA%D8%B1%DB%8C%D9%86-%D8%A8%D9%86%D8%A7%D9%87%D8%A7%DB%8C-%D8%AA%D8%A7%D8%B1%DB%8C%D8%AE%DB%8C-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%DA%A9%D9%87-%D8%A8%DB%8C%D8%B4%D8%AA%D8%B1%DB%8C%D9%86-9.jpg"),
@@ -36,5 +39,9 @@ class InfoViewModel:ViewModel() {
     fun getImageUrl(index: Int): String? {
         setData()
         return _dataList.value?.get(index)?.image
+    }
+    fun talk(): String? {
+        val randomNumber = goodTalks.value?.let { Random(0).nextInt(it.size) }
+        return randomNumber?.let { goodTalks.value?.get(it).toString() }
     }
 }

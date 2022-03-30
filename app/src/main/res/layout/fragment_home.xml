@@ -15,12 +15,11 @@
         <TextView
             android:id="@+id/txv_good_talk"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="100dp"
+            android:layout_height="200dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:background="@color/design_default_color_primary"/>
+            android:background="@drawable/rose"/>
 
 
 
