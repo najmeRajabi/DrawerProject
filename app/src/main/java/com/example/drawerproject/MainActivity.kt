@@ -1,5 +1,8 @@
 package com.example.drawerproject
 
+import android.content.Context
+import android.content.SharedPreferences
+import android.content.res.Resources
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -19,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+//        Utils.onActivityCreateSetTheme(this)
         setContentView(R.layout.activity_main)
 
 
@@ -68,6 +72,25 @@ class MainActivity : AppCompatActivity() {
 
         val navController = findNavController(R.id.nav_host_fragment)
         return item.onNavDestinationSelected(navController) || super.onOptionsItemSelected(item)
+    }
+
+    override fun getTheme(): Resources.Theme {
+        val theme = super.getTheme()
+        val sharedPreferences: SharedPreferences =
+            getSharedPreferences("HW10_theme" , Context.MODE_PRIVATE)
+        when (sharedPreferences.getString(THEME,"blue")) {
+            "blue" -> {
+                theme.applyStyle(R.style.Theme_DrawerProject, true)
+//                Utils.changeToTheme(this, Utils.THEME_DEFAULT)
+            }
+            "pink" -> {
+                theme.applyStyle(R.style.Theme_Pink, true)
+            }
+            "dark" -> {
+                theme.applyStyle(R.style.Theme_DrawerProject_dark, true)
+            }
+        }
+        return theme
     }
 
 

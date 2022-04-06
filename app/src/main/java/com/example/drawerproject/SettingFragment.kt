@@ -1,22 +1,22 @@
 package com.example.drawerproject
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.SeekBar
-import androidx.appcompat.app.AppCompatDelegate
 import androidx.navigation.fragment.findNavController
 import com.example.drawerproject.databinding.FragmentSettingBinding
 
 var NUMBER= 4
 var SHOWINFO = false
+const val THEME = "theme"
 const val NAME = "name"
 const val NATIONAL = "nationalCode"
 const val PHONE = "phone"
@@ -87,11 +87,26 @@ class SettingFragment : Fragment() {
 
     private fun changeTheme(id:Int): RadioGroup.OnCheckedChangeListener? {
         when (id){
-            R.id.radioBtn_pink -> activity?.setTheme(R.style.Theme_Pink)
-            R.id.radioBtn_blue -> activity?.setTheme(R.style.Theme_DrawerProject)
-            R.id.radioBtn_dark -> activity?.setTheme(R.style.Theme_DrawerProject_dark)
+            R.id.radioBtn_pink -> {
+                saveThemeInSharedPref("pink")
+                refresh()
+            }
+            R.id.radioBtn_blue -> {
+                saveThemeInSharedPref("blue")
+                refresh()
+            }
+            R.id.radioBtn_dark -> {
+
+                saveThemeInSharedPref("dark")
+                refresh()
+            }
         }
         return null
+    }
+
+    private fun refresh() {
+        activity?.finish()
+        activity?.startActivity(Intent(context,MainActivity::class.java))
     }
 
     private fun checkRegistered() {
@@ -112,13 +127,37 @@ class SettingFragment : Fragment() {
             when (view.getId()) {
                 R.id.radioBtn_dark ->
                     if (checked) {
-                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+//                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                        saveThemeInSharedPref("dark")
+                        activity?.theme
                     }
                 R.id.radioBtn_blue ->
                     if (checked){
-                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+//                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                        saveThemeInSharedPref("blue")
+                        activity?.theme
+                    }
+                R.id.radioBtn_pink ->
+                    if (checked){
+                        saveThemeInSharedPref("pink")
+
+                        activity?.theme
                     }
             }
+        }
+    }
+
+    private fun saveThemeInSharedPref(theme:String) {
+        val sharedPreferences:SharedPreferences =
+            requireActivity().getSharedPreferences("HW10_theme" , Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit().apply {
+            when (theme){
+                "blue" -> this.putString(THEME,"blue")
+                "pink" -> this.putString(THEME,"pink")
+                "dark" -> this.putString(THEME,"dark")
+                else -> this.putString(THEME,"blue")
+            }
+                .apply()
         }
     }
 
