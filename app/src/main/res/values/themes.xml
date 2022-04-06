@@ -31,7 +31,7 @@
 
     <style name="Theme.DrawerProject.dark" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#7980A8</item>
+        <item name="colorPrimary">#444A6B</item>
         <item name="colorPrimaryVariant">@color/_purple_500</item>
         <item name="colorOnPrimary">#e7dada</item>
         <!-- Secondary brand color. -->
