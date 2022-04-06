@@ -60,6 +60,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_weight="1"
+                android:textAlignment="textEnd"
                 android:shadowColor="@color/pink"
                 android:text="@string/pink"
                 android:textColor="@color/pink" />
@@ -71,6 +72,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_weight="1"
                 android:checked="true"
+                android:textAlignment="textEnd"
                 android:text="@string/blue"
                 android:textColor="@color/blue" />
 
@@ -80,6 +82,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_weight="1"
+                android:textAlignment="textEnd"
                 android:text="@string/dark"
                 android:textColor="@color/gray" />
 
