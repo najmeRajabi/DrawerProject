@@ -41,7 +41,7 @@ class InfoViewModel:ViewModel() {
         return _dataList.value?.get(index)?.image
     }
     fun talk(): String? {
-        val randomNumber = goodTalks.value?.let { Random(0).nextInt(it.size) }
+        val randomNumber = (0 until (goodTalks.value?.size!!)).random()
         return randomNumber?.let { goodTalks.value?.get(it).toString() }
     }
 }
