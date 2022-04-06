@@ -31,4 +31,8 @@
     <style name="txv_accountNumber_style.numbers">
         <item name="android:gravity">center</item>
     </style>
+
+    <style name="bgStyle">
+        <item name="android:background">@color/gray2</item>
+    </style>
 </resources>

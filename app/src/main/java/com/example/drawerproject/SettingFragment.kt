@@ -40,13 +40,23 @@ class SettingFragment : Fragment() {
     ): View? {
         binding = FragmentSettingBinding.inflate(layoutInflater, container, false)
 
+        checkTheme()
         return binding.root
+    }
+
+    private fun checkTheme() {
+        val sharedPreferences:SharedPreferences =
+            requireActivity().getSharedPreferences("HW10_theme" , Context.MODE_PRIVATE)
+        when (sharedPreferences.getString(THEME,"blue")){
+            "blue" -> binding.radioBtnBlue.isChecked = true
+            "pink" -> binding.radioBtnPink.isChecked = true
+            "dark" -> binding.radioBtnDark.isChecked = true
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        binding.radioGroupTheme.setOnCheckedChangeListener{}
         checkRegistered()
 
 
@@ -117,35 +127,6 @@ class SettingFragment : Fragment() {
         }
     }
 
-
-
-
-
-    fun onRadioButtonClick(view: View){
-        if (view is RadioButton){
-            val checked = view.isChecked
-            when (view.getId()) {
-                R.id.radioBtn_dark ->
-                    if (checked) {
-//                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-                        saveThemeInSharedPref("dark")
-                        activity?.theme
-                    }
-                R.id.radioBtn_blue ->
-                    if (checked){
-//                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-                        saveThemeInSharedPref("blue")
-                        activity?.theme
-                    }
-                R.id.radioBtn_pink ->
-                    if (checked){
-                        saveThemeInSharedPref("pink")
-
-                        activity?.theme
-                    }
-            }
-        }
-    }
 
     private fun saveThemeInSharedPref(theme:String) {
         val sharedPreferences:SharedPreferences =
